@@ -1,0 +1,13 @@
+caption: Milestone
+created: 20260223163225635
+icon: 🪧
+key: milestone
+modified: 20260305110649882
+parent: _node
+rrt.type: type
+tags: 
+title: $:/plugins/rimir/orga/typed/types/milestone
+type: text/vnd.tiddlywiki
+upref: m
+
+\function rrt.fields:1() date

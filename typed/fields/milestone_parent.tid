@@ -1,0 +1,14 @@
+caption: Milestone: Parent
+constraints: n:1
+created: 20260223163505107
+icon: 🔼
+key: parent
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/milestone:parent
+type: text/vnd.tiddlywiki
+typed: project roadmap
+validity: milestone
+
+<!-- short description -->

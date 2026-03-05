@@ -1,0 +1,14 @@
+caption: Abbreviation
+cardinality: 
+constraints: !3+ !u
+created: 20260216120237526
+icon: 🔜
+key: abbrev
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/abbrev
+type: text/vnd.tiddlywiki
+typed: text
+
+<!-- short description -->

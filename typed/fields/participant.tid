@@ -1,0 +1,14 @@
+caption: Participant
+constraints: n:1
+created: 20260223165237417
+icon: 🧑‍🦰
+key: participant
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/participant
+type: text/vnd.tiddlywiki
+typed: person
+validity: 
+
+<!-- short description -->

@@ -1,0 +1,13 @@
+caption: Status
+constraints: n:1
+created: 20260210083510928
+icon: 👁️
+key: status
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/status
+type: text/vnd.tiddlywiki
+typed: enum:core-status
+
+<!-- short description -->

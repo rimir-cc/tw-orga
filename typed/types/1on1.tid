@@ -1,0 +1,13 @@
+caption: 1on1
+created: 20260223165007688
+icon: 🪧
+key: 1on1
+modified: 20260305110649882
+parent: _node
+rrt.type: type
+tags: 
+title: $:/plugins/rimir/orga/typed/types/1on1
+type: text/vnd.tiddlywiki
+upref: 1on1
+
+\function rrt.fields:1() participant

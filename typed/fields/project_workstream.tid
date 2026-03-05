@@ -1,0 +1,12 @@
+caption: Workstream: Parent
+constraints: n:1
+created: 20260223142201186
+icon: 🔼
+key: parent
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/project:workstream
+type: text/vnd.tiddlywiki
+typed: project
+validity: workstream

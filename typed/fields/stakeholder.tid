@@ -1,0 +1,13 @@
+caption: Stakeholder
+constraints: 
+created: 20260208122832156
+icon: 👩‍💻
+key: stakeholder
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/stakeholder
+type: text/vnd.tiddlywiki
+typed: person team
+
+<!-- short description -->

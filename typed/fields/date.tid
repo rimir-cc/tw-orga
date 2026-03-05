@@ -1,0 +1,13 @@
+caption: Date
+constraints: 
+created: 20260223164038483
+icon: ⏰
+key: date
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/date
+type: text/vnd.tiddlywiki
+typed: date
+
+<!-- short description -->

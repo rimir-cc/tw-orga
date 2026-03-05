@@ -1,0 +1,16 @@
+caption: _Status
+created: 20260210114801046
+icon: 
+key: _status
+modified: 20260305110649881
+options: 
+rrt.type: enum
+tags: 
+title: $:/plugins/rimir/orga/typed/enums/_status
+type: text/vnd.tiddlywiki
+
+\function rrt.options:0() active locked archived
+
+<!-- TODO not working because of https://github.com/TiddlyWiki/TiddlyWiki5/issues/9647 \function rrt.fields() [variables[]prefix[rrt.options:]]:map[function<currentTiddler>]+[join[ ]]-->
+
+\function rrt.options() [rrfunc[rrt.options:0]][rrfunc[rrt.options:1]][rrfunc[rrt.options:2]]+[join[ ]]

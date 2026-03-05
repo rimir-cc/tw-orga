@@ -1,0 +1,13 @@
+caption: Person
+created: 20260202103555161
+icon: 🙍
+key: person
+modified: 20260305110649882
+parent: _node
+rrt.type: type
+tags: 
+title: $:/plugins/rimir/orga/typed/types/person
+type: text/vnd.tiddlywiki
+upref: pn
+
+\function rrt.fields:1() birthday

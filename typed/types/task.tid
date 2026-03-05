@@ -1,0 +1,13 @@
+caption: Task
+created: 20260202103537032
+icon: 🧮
+key: task
+modified: 20260305110649883
+parent: _node
+rrt.type: type
+tags: 
+title: $:/plugins/rimir/orga/typed/types/task
+type: text/vnd.tiddlywiki
+upref: t
+
+\function rrt.fields:1() stakeholder

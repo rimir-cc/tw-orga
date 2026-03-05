@@ -1,0 +1,15 @@
+caption: _Node
+created: 20260210072123513
+icon: 🪢
+key: _node
+modified: 20260305110649882
+rrt.type: type
+tags: 
+title: $:/plugins/rimir/orga/typed/types/_node
+type: text/vnd.tiddlywiki
+
+\function rrt.fields:0() title subtitle abbrev aliases caption description parent status
+
+<!-- TODO not working because of https://github.com/TiddlyWiki/TiddlyWiki5/issues/9647 \function rrt.fields() [variables[]prefix[rrt.fields:]]:map[function<currentTiddler>][[title subtitle aliases caption description status]]+[join[ ]]-->
+
+\function rrt.fields() [rrfunc[rrt.fields:0]][rrfunc[rrt.fields:1]][rrfunc[rrt.fields:2]]+[join[ ]]

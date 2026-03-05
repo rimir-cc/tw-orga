@@ -1,0 +1,14 @@
+caption: Person: Parent
+constraints: n:1
+created: 20260223100253547
+icon: 🔼
+key: parent
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/person:parent
+type: text/vnd.tiddlywiki
+typed: orga
+validity: person
+
+<!-- short description -->

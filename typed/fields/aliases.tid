@@ -1,0 +1,13 @@
+caption: Aliases
+constraints: u
+created: 20260210083142385
+icon: ⏬
+key: aliases
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/aliases
+type: text/vnd.tiddlywiki
+typed: text
+
+<!-- short description -->

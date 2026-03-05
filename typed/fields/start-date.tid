@@ -1,0 +1,13 @@
+caption: Start-Date
+constraints: 
+created: 20260223142621021
+icon: ⏰
+key: start-date
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/start-date
+type: text/vnd.tiddlywiki
+typed: date
+
+<!-- short description -->

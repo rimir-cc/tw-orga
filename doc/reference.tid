@@ -1,0 +1,68 @@
+created: 20260305110649879
+modified: 20260305110649879
+rdt.order: 6
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: Reference
+title: $:/plugins/rimir/orga/doc/reference
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Type table
+
+|!Key |!Icon |!Parent |!Upref |!Fields (rrt.fields:1) |
+|`_node` |— |— |— |title parent caption description status abbrev |
+|`node` |— |`_node` |— |node-title |
+|`orga` |— |`_node` |`o` |— |
+|`team` |— |`_node` |`tm` |— |
+|`person` |— |`_node` |`pe` |birthday aliases |
+|`project` |— |`_node` |`p` |start-date end-date |
+|`workstream` |— |`project` |`ws` |— |
+|`roadmap` |— |`project` |`rm` |— |
+|`task` |— |`_node` |`t` |stakeholder |
+|`milestone` |— |`roadmap` |`ms` |date |
+|`assignment` |— |`person` |`a` |— |
+|`1on1` |— |`_node` |`1` |participant |
+
+!! Field table
+
+|!Key |!Typed |!Constraints |!Description |
+|`title` |`$title` |`filter` |Auto-generated title |
+|`parent` |varies by type |`!1+` |Parent reference |
+|`caption` |`text` |— |Display name |
+|`description` |`text` |— |Long description |
+|`status` |`enum:_status` |— |Status enum |
+|`abbrev` |`text` |`!u` |Unique abbreviation |
+|`start-date` |`date` |— |Start date |
+|`end-date` |`date` |— |End date |
+|`date` |`date` |— |Date (milestones) |
+|`birthday` |`date` |— |Birthday (persons) |
+|`aliases` |`text` |— |Alternative names |
+|`stakeholder` |`person` |— |Stakeholder reference |
+|`participant` |`person` |`!1+` |1on1 participant |
+|`subtitle` |`text` |— |Subtitle text |
+|`node-title` |`text` |— |Node display title |
+
+!! Parent constraint overrides
+
+|!Type |!Allowed parent types |
+|`team` |`orga` |
+|`person` |`orga` |
+|`project` |`orga` |
+|`workstream` |`project` |
+|`task` |`project` |
+|`roadmap` |`project` |
+|`milestone` |`roadmap` |
+|`assignment` |`person` |
+
+!! Enum: _status / core-status
+
+Base options (`rrt.options:0`): `active` `inactive` `archived`
+
+Extended options (`rrt.options:1` via `core-status`): `planned` `in-progress` `completed` `on-hold` `cancelled`
+
+</$fill>
+</$transclude>

@@ -1,0 +1,13 @@
+caption: Subtitle
+cardinality: 
+created: 20260208121941784
+icon: 🏷️
+key: subtitle
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/subtitle
+type: text/vnd.tiddlywiki
+typed: text
+
+<!-- short description -->

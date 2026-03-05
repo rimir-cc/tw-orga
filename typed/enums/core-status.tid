@@ -1,0 +1,11 @@
+caption: CoreStatus
+created: 20260210115257696
+icon: 
+key: core-status
+modified: 20260305110649881
+options: 
+parent: _status
+rrt.type: enum
+tags: 
+title: $:/plugins/rimir/orga/typed/enums/core-status
+type: text/vnd.tiddlywiki

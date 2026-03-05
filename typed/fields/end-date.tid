@@ -1,0 +1,13 @@
+caption: End-Date
+constraints: 
+created: 20260223142622079
+icon: ⌚
+key: end-date
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/end-date
+type: text/vnd.tiddlywiki
+typed: date
+
+<!-- short description -->

@@ -1,0 +1,14 @@
+caption: Task: Parent
+constraints: n:1
+created: 20260210095206274
+icon: 🔼
+key: parent
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/task:parent
+type: text/vnd.tiddlywiki
+typed: node project workstream
+validity: task
+
+<!-- short description -->

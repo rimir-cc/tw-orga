@@ -1,0 +1,15 @@
+caption: Node: Title
+cardinality: 
+constraints: [get[parent]][[/]][get[abbrev]]+[join[]]
+created: 20260223073707004
+icon: 🏷️
+key: title
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/node-title
+type: text/vnd.tiddlywiki
+typed: $title
+validity: node
+
+<!-- short description -->

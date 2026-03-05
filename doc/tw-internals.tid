@@ -1,0 +1,47 @@
+created: 20260305110649880
+modified: 20260305110649880
+rdt.order: 7
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: TW Internals
+title: $:/plugins/rimir/orga/doc/tw-internals
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Shadow tiddler loading
+
+Orga tiddlers are shadow tiddlers — they live inside the plugin bundle defined by `plugin.info`. TW loads all shadow tiddlers at boot from the plugin's directory tree. They are read-only in normal operation; editing a shadow tiddler in the browser creates a regular tiddler that overrides it.
+
+!! $importvariables for dynamic type import
+
+The Spawner and Field Bar use `$importvariables` to pull type and field definitions into scope at runtime:
+
+```
+<$importvariables filter="[[$:/plugins/rimir/typed/functions]] [<typeTiddler>] [<parentTypeTiddler>]">
+```
+
+This brings `rrt.fields()`, `rrt.fields:0()`, `rrt.fields:1()`, etc. into scope for the current type. It's the only way to import from a computed tiddler title (where the title depends on user selection).
+
+!! plugin.info loading
+
+TW reads `plugin.info` to discover the plugin's metadata and then scans the plugin directory for tiddler files. Each `.tid` file becomes a shadow tiddler under the plugin's namespace. The directory structure is flattened — subdirectory paths don't affect tiddler titles (titles come from the `title` field in the file).
+
+!! Field discovery via all[shadows+tiddlers]
+
+The type system discovers all type/field/enum definitions using:
+
+```
+[all[shadows+tiddlers]rrt.type[type]]
+```
+
+This searches both shadow tiddlers (from plugins) and regular tiddlers. This is why orga types are discoverable without any central registry — the `rrt.type` field serves as a self-registration mechanism.
+
+!! Plugin dependencies
+
+The orga plugin depends on the typed and components plugins. TW loads plugins in dependency order based on `plugin.info`. If typed or components is missing, the orga plugin's type definitions will load but the Spawner, Field Bar, and Validator UIs won't function.
+
+</$fill>
+</$transclude>

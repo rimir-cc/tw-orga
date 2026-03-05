@@ -1,0 +1,68 @@
+created: 20260305110649878
+modified: 20260305110649878
+rdt.order: 3
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: Dev Workflow
+title: $:/plugins/rimir/orga/doc/dev-workflow
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Plugin files
+
+11 type definitions, 22+ field definitions, 2 enum definitions in `typed/` subdirectories, plus `plugin.info` and documentation tiddlers.
+
+!! Restart rules
+
+''Every change requires restart.'' Orga tiddlers are plugin shadow tiddlers loaded at boot. The filesystem-watcher cannot sync shadow tiddler changes.
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/callout" type="danger">
+<$fill $name="body">Every change to an orga `.tid` file requires a server restart — shadow tiddlers are loaded once at boot.</$fill>
+</$transclude>
+
+!! Adding a type
+
+# Create `typed/types/<name>.tid`
+# Set fields: `key`, `rrt.type: type`, `parent` (for inheritance), `icon`, `upref`, `caption`, `title`
+# Optionally define `rrt.fields:1()` in body for extra fields
+# Create field definitions for any new fields
+# Create type-specific parent override if needed
+# Restart server
+
+!! Adding a field
+
+# Create `typed/fields/<name>.tid`
+# Set fields: `key`, `rrt.type: field`, `typed` (editor type), `caption`, `icon`, `title`
+# Optional: `constraints` for validation rules
+# Add field key to parent type's `rrt.fields:1()` function
+# Restart server
+
+!! Type-specific field override
+
+# Create `typed/fields/<type>_<field>.tid` (e.g., `task_parent.tid`)
+# Set same `key` as the base field
+# Add `validity: <type-key>` to restrict to that type
+# Set `typed` to allowed reference types
+# Restart server
+
+!! Adding an enum
+
+# Create base: `typed/enums/<name>.tid` with `key`, `rrt.type: enum`, define `rrt.options:0()`
+# Create child: set `parent` field, add `rrt.options:1()` for additional options
+# Reference from a field with `typed: enum:<key>`
+# Restart server
+
+!! Dependencies
+
+* Typed plugin (engine)
+* Components plugin (`pills` facade for enum and object-ref field editors)
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/callout" type="tip">
+<$fill $name="body">The orga plugin depends on both the typed and components plugins. Make sure all three are registered in `tiddlywiki.info`.</$fill>
+</$transclude>
+
+</$fill>
+</$transclude>

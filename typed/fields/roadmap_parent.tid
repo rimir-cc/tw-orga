@@ -1,0 +1,14 @@
+caption: Roadmap: Parent
+constraints: n:1
+created: 20260223163602703
+icon: 🔼
+key: parent
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/roadmap:parent
+type: text/vnd.tiddlywiki
+typed: node
+validity: roadmap
+
+<!-- short description -->

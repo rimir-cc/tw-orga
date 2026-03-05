@@ -1,0 +1,12 @@
+caption: Description
+created: 20260210083351803
+icon: 📮
+key: description
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/description
+type: text/vnd.tiddlywiki
+typed: text
+
+<!-- short description -->

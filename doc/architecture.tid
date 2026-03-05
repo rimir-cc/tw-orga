@@ -1,0 +1,76 @@
+created: 20260305110649878
+modified: 20260305110649878
+rdt.order: 2
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: Architecture
+title: $:/plugins/rimir/orga/doc/architecture
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Type hierarchy
+
+```
+_node (abstract)
+├── node
+├── orga
+│   ├── team
+│   ├── person
+│   │   └── assignment
+│   └── project
+│       ├── workstream
+│       │   └── task
+│       ├── roadmap
+│       │   └── milestone
+│       └── task
+├── 1on1
+└── (all types inherit _node common fields)
+```
+
+!! Inheritance model
+
+* `_node` defines `rrt.fields:0()` — common fields shared by all types
+* Subtypes add `rrt.fields:1()` for type-specific fields (e.g., task adds stakeholder, person adds birthday)
+* Same pattern for enums: `_status` defines `rrt.options:0()`, `core-status` adds `rrt.options:1()`
+
+!! Parent relationships
+
+Enforced via type-specific field overrides:
+
+|!Type |!Allowed parents |
+|team, person, project |orga |
+|workstream, task, roadmap |project |
+|milestone |roadmap |
+|assignment |person |
+|1on1 |generic (any) |
+
+!! Title generation
+
+Computed via constraint filter:
+
+```
+[get[parent]] + [[/]] + [<type-tid>get[upref]] + [[:]] + [get[abbrev]] → join[]
+```
+
+Produces titles like `OrgaName/p:ProjectAbbrev`. The `node` type uses a simpler pattern: `parent/abbrev`.
+
+!! File structure
+
+```
+orga/
+  typed/
+    types/       ← type definitions (_node.tid, orga.tid, project.tid, ...)
+    fields/      ← field definitions (title.tid, parent.tid, status.tid, ...)
+    enums/       ← enum definitions (_status.tid, core-status.tid)
+  plugin.info
+```
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/callout" type="warning">
+<$fill $name="body">Parent field overrides use the `validity` field to restrict which type references are allowed. Without a type-specific override, any typed tiddler can be a parent.</$fill>
+</$transclude>
+
+</$fill>
+</$transclude>

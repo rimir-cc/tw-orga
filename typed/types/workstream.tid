@@ -1,0 +1,13 @@
+caption: Workstream
+created: 20260223142017671
+icon: ➿
+key: workstream
+modified: 20260305110649883
+parent: _node
+rrt.type: type
+tags: 
+title: $:/plugins/rimir/orga/typed/types/workstream
+type: text/vnd.tiddlywiki
+upref: ws
+
+\function rrt.fields:1() start-date end-date

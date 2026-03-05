@@ -1,0 +1,40 @@
+created: 20260305110649879
+modified: 20260305110649879
+rdt.order: 5
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: FAQ
+title: $:/plugins/rimir/orga/doc/faq
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Q: Why does every change need a server restart?
+
+Orga tiddlers are plugin shadow tiddlers loaded once at boot from `plugin.info`. The filesystem-watcher cannot sync shadow tiddler changes — they exist in the plugin bundle, not in the `tiddlers/` directory.
+
+!! Q: How do I add a new organisational type?
+
+# Create `typed/types/<name>.tid` in the orga plugin directory
+# Set `key`, `rrt.type: type`, `parent` (typically `_node` or another type), `icon`, `upref`, `caption`
+# Define `rrt.fields:1()` in the body for type-specific fields
+# Create field definitions and parent overrides as needed
+# Register any new enums
+# Restart the server
+
+!! Q: Can I have deeper than 3-level inheritance?
+
+No. The typed engine's `:0`/`:1`/`:2` pattern is hardcoded due to TW issue #9647. In practice, the orga model uses 2 levels: `_node` provides `:0` (common fields), each concrete type provides `:1` (type-specific fields).
+
+!! Q: How does title generation work for orga types?
+
+Each type defines an `upref` field (e.g., `p` for project, `t` for task). The title filter combines: `parent + "/" + upref + ":" + abbrev`. So a project under "MyOrg" with abbreviation "Alpha" gets the title `MyOrg/p:Alpha`.
+
+!! Q: What are type-specific field overrides?
+
+A field can have multiple definitions with the same `key`. Adding a `validity` field restricts a definition to a specific type. For example, `task_parent.tid` has `key: parent` and `validity: task`, which restricts the parent field for tasks to only accept `project` references. Without the override, any typed tiddler could be a parent.
+
+</$fill>
+</$transclude>

@@ -1,0 +1,14 @@
+caption: Team: Parent
+constraints: n:1
+created: 20260223100257283
+icon: 🔼
+key: parent
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/team:parent
+type: text/vnd.tiddlywiki
+typed: orga
+validity: team
+
+<!-- short description -->

@@ -1,0 +1,13 @@
+caption: Caption
+constraints: !3+
+created: 20260202103623791
+icon: 📛
+key: caption
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/caption
+type: text/vnd.tiddlywiki
+typed: text
+
+<!-- short description -->

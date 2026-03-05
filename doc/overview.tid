@@ -1,0 +1,62 @@
+created: 20260305110649879
+modified: 20260305110649879
+rdt.hub-category: ui-framework
+rdt.hub-category-name: UI Framework & Domain Model
+rdt.hub-order: 3
+rdt.order: 1
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: Overview
+title: $:/plugins/rimir/orga/doc/overview
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! What it does
+
+Organisational domain model built on the typed engine. Defines types for organisations, projects, teams, people, and more. All types inherit from the abstract `_node` base type.
+
+!! Types
+
+|!Type |!Icon |!Key |!Extra fields |
+|Organisation |🏢 |orga |— |
+|Project |📦 |project |— |
+|Task |🧮 |task |stakeholder |
+|Team |🧑‍🤝‍🧑 |team |— |
+|Person |🙍 |person |birthday |
+|Node |📂 |node |— |
+|Workstream |➿ |workstream |start-date, end-date |
+|Assignment |🛃 |assignment |— |
+|Roadmap |🔁 |roadmap |— |
+|Milestone |🪧 |milestone |date |
+|1on1 |🪧 |1on1 |participant |
+
+!! Common fields (inherited from `_node`)
+
+All types share: title, subtitle, abbrev, aliases, caption, description, parent, status
+
+!! Enums
+
+* ''core-status'' — active, locked, archived (inherits from `_status`)
+
+!! Prerequisites
+
+* Typed plugin installed and loaded
+* TiddlyWiki running in Node.js server mode
+
+!! Quick start
+
+# Ensure the typed plugin is registered in `tiddlywiki.info`
+# Register orga plugin in `tiddlywiki.info`
+# Start server
+# Use the Spawner to create organisational entities
+# Field Bar appears automatically on all orga tiddlers
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/callout" type="info">
+<$fill $name="body">Orga is a domain plugin — it contributes types, fields, and enums to the typed engine. The typed plugin provides the UI (Spawner, Field Bar, Validator).</$fill>
+</$transclude>
+
+</$fill>
+</$transclude>

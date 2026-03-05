@@ -1,0 +1,14 @@
+caption: Node: Parent
+constraints: n:1
+created: 20260223100811930
+icon: 🔼
+key: parent
+modified: 20260305110649882
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/node:parent
+type: text/vnd.tiddlywiki
+typed: node orga
+validity: node
+
+<!-- short description -->

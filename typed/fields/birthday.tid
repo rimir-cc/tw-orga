@@ -1,0 +1,13 @@
+caption: Birthday
+constraints: 
+created: 20260224132121498
+icon: 🎂
+key: birthday
+modified: 20260305110649881
+rrt.type: field
+tags: 
+title: $:/plugins/rimir/orga/typed/fields/birthday
+type: text/vnd.tiddlywiki
+typed: date
+
+<!-- short description -->

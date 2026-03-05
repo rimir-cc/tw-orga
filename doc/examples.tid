@@ -1,0 +1,51 @@
+created: 20260305110649879
+modified: 20260305110649879
+rdt.order: 4
+rdt.plugin-key: orga
+rdt.plugin-name: orga
+rdt.plugin-subtitle: Organisational domain model built on the typed engine
+rdt.section: Examples
+title: $:/plugins/rimir/orga/doc/examples
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Create an org → project → task hierarchy
+
+# Open the Spawner and select type `orga`
+# Set `abbrev: Acme`, `caption: Acme Corp` → title generates as `o:Acme`
+# Create a project under it: type `project`, `parent: o:Acme`, `abbrev: Alpha` → title `o:Acme/p:Alpha`
+# Create a task: type `task`, `parent: o:Acme/p:Alpha`, `abbrev: Fix` → title `o:Acme/p:Alpha/t:Fix`
+
+!! Assign people to teams
+
+# Create an org: `o:Acme`
+# Create a team: type `team`, `parent: o:Acme`, `abbrev: Eng` → title `o:Acme/tm:Eng`
+# Create a person: type `person`, `parent: o:Acme`, `abbrev: JD` → title `o:Acme/pe:JD`
+# Create an assignment: type `assignment`, `parent: o:Acme/pe:JD`, `abbrev: EngLead` → title `o:Acme/pe:JD/a:EngLead`
+
+The assignment links a person to a role. Use the `description` field to describe the assignment.
+
+!! Parent constraints in action
+
+When creating a `task`, the parent field only allows `project` references (via the type-specific override in `task_parent.tid`). Attempting to set a `person` or `team` as a task's parent will fail validation.
+
+Similarly, `milestone` only allows `roadmap` parents, and `workstream` only allows `project` parents.
+
+!! Title generation
+
+Each type has an `upref` (short prefix) used in auto-generated titles:
+
+|!Type |!Upref |!Example title |
+|orga |`o` |`o:Acme` |
+|project |`p` |`o:Acme/p:Alpha` |
+|task |`t` |`o:Acme/p:Alpha/t:Fix` |
+|team |`tm` |`o:Acme/tm:Eng` |
+|person |`pe` |`o:Acme/pe:JD` |
+|milestone |`ms` |`o:Acme/p:Alpha/rm:Q1/ms:Launch` |
+
+The formula is: `parent / upref : abbrev`. This creates a hierarchical namespace.
+
+</$fill>
+</$transclude>
