@@ -20,6 +20,14 @@ Provides type definitions for common organisational entities like projects, task
 
 Install plugin alongside typed. Use the Spawner to create new organisational entities. All types are immediately available in the type system.
 
+## Plugin Library
+
+Install from the [rimir plugin library](https://rimir-cc.github.io/tw-plugin-library/) via *Control Panel → Plugins → Get more plugins*.
+
+## Demo
+
+Try this plugin in the [live demo wiki](https://rimir-cc.github.io/tw-demo/).
+
 ## License
 
 MIT -- see [LICENSE.md](LICENSE.md)
